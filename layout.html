@@ -7,10 +7,10 @@
     <link rel="shortcut icon" href="./resources/layout/fukuske_icon.webp" sizes="192x192"/>
     <link rel="stylesheet" href="./css/layout.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title></title>
 </head>
 
 <!--Search bar-->
-
 <div id="searchbox-background" onclick="closeSearchbox()"></div>
 <div id="search-box" class="search-box">
     <a class="close-search" onclick="closeSearchbox()">
@@ -82,7 +82,7 @@
             </a>
     
             <div class="mobile-icons-container">
-                <a class="search-icon" title="Search" href="#" onclick="openSearchbox()">
+                <a class="search-icon" title="Search" onclick="openSearchbox()">
                     <i class="fa fa-search"></i>
                 </a>
                 <a class="profile-icon" title="Profile" href="#">
@@ -102,26 +102,12 @@
         <div id="mobile-menu" class="mobile-menu">
             <ul class="mobile-menu">
                 <li><a href="./index.html">HOME</a></li>
-                <li>
-                    <a href="#" id="mobile-menu-can-dropdown" class="mobile-menu-can-dropdown">SẢN PHẨM</a>
-                    <ul class="mobile-dropdown-menu" id="mobile-dropdown-menu">
-                        <li><a href="#">1</a></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                    </ul>
-                </li>
-                <li><a href="#">BÀI VIẾT</a></li>
-                <li><a href="#">GIỚI THIỆU</a></li>
-                <li><a href="#">HỎI & ĐÁP</a></li>
-                <li><a href="#">CLIPS</a></li>
-                <li>
-                    <a href="#" id="mobile-menu-can-dropdown-2" class="mobile-menu-can-dropdown">MUA HÀNG</a>
-                    <ul class="mobile-dropdown-menu" id="mobile-dropdown-menu-2">
-                        <li><a href="#">1</a></li>
-                        <li><a href="#">2</a></li>
-                    </ul>
-                </li>
-                <li><a href="#" onclick="openContactForm()">LIÊN HỆ</a></li>
+                <li><a href="./bai_viet.html">BÀI VIẾT</a></li>
+                <li><a href="./gioi_thieu.html">GIỚI THIỆU</a></li>
+                <li><a href="./hoi_dap.html">HỎI & ĐÁP</a></li>
+                <li><a href="./clip.html">CLIPS</a></li>
+                <li><a href="./mua_hang.html">MUA HÀNG</a></li>
+                <li><a onclick="openContactForm()">LIÊN HỆ</a></li>
             </ul>
         </div>
     </div>
@@ -132,30 +118,16 @@
     <div class="navbar-container">
         <ul class="navbar">
             <li><a href="/index.html">HOME</a></li>
-            <li>
-                <a href="#" class="dropdown-toggle">SẢN PHẨM</a>
-                <ul class="dropdown-menu">
-                    <li><a href="#">1</a></li>
-                    <li><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                </ul>
-            </li>
-            <li><a href="#">BÀI VIẾT</a></li>
-            <li><a href="#">GIỚI THIỆU</a></li>
-            <li><a href="#">HỎI & ĐÁP</a></li>
-            <li><a href="#">CLIPS</a></li>
-            <li>
-                <a href="#" class="dropdown-toggle">MUA HÀNG</a>
-                <ul class="dropdown-menu">
-                    <li><a href="#">1</a></li>
-                    <li><a href="#">2</a></li>
-                </ul>
-            </li>
-            <li><a href="#" onclick="openContactForm()">LIÊN HỆ</a></li>
+            <li><a href="bai_viet.html">BÀI VIẾT</a></li>
+            <li><a href="./gioi_thieu.html">GIỚI THIỆU</a></li>
+            <li><a href="./hoi_dap.html">HỎI & ĐÁP</a></li>
+            <li><a href="./clip.html">CLIPS</a></li>
+            <li><a href="./mua_hang.html">MUA HÀNG</a></li>
+            <li><a onclick="openContactForm()">LIÊN HỆ</a></li>
         </ul>
 
         <div class="icons-container">
-            <a class="search-icon" title="Search" href="#" onclick="openSearchbox()">
+            <a class="search-icon" title="Search" onclick="openSearchbox()">
                 <i class="fa fa-search"></i>
             </a>
             <a class="profile-icon" title="Profile" href="#">
@@ -220,20 +192,17 @@
     </div>
 
     <div class="lienket">
-        <a href="#" target="blank">
+        <a href="https://www.facebook.com/fukuske.vn/" target="blank">
             <img class="footer_link" src="./resources/layout/facebookfooterw.webp">
         </a>
-        <a href="#" target="blank">
+        <a href="https://youtube.com/@voykhoafukuske3102?si=gL_3W47_Jj4ONAmR" target="blank">
             <img class="footer_link" src="./resources/layout/youtubefooterw.webp">
         </a>
-        <a href="#" target="blank">
+        <a href="https://konni39.vn/" target="blank">
             <img class="footer_link" src="./resources/layout/konnifooterw.webp">
         </a>
-        <a href="#" target="blank">
+        <a href="https://vn.shp.ee/4oejGMm" target="blank">
             <img class="footer_link" src="./resources/layout/shoppeefooterw.webp">
-        </a>
-        <a href="#" target="blank">
-            <img class="footer_link" src="./resources/layout/tikifooterw.webp">
         </a>
     </div>
 

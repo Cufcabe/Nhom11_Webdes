@@ -182,7 +182,7 @@ header{
     display: none;
 }
 /*Responsive*/
-@media (max-width: 905px) {
+@media (max-width: 850px) {
     #mobile-navbar {
         display: block;
         width: 100%;
@@ -193,8 +193,7 @@ header{
     #mobile-menu {
         display: none;
         width: 100%;
-        position: relative;
-        z-index: 99;                
+        position: relative;            
     }
     .mobile-navbar {
         list-style: none;
@@ -261,6 +260,15 @@ header{
         color: black !important;
         background-color: whitesmoke;
     }
+    .searchbox-button {
+        font-size: 15px;
+    }
+    .search-box-input {
+        padding: 20px 25px;
+    }
+    .search-box-text-input {
+        width: 80%;
+    }
 }
 
 
@@ -268,6 +276,7 @@ header{
 /*Standard navbar*/
 nav {
     background-color: whitesmoke;
+    margin-bottom: 10px;
 }
 .navbar-container {
     max-width: 1600px;

@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chăm Sóc Đôi Chân Bạn &#8211; Hơn 130 năm cùng những đôi tất Tuyệt vời</title>
+    <link rel="shortcut icon" href="./resources/layout/fukuske_icon.webp" sizes="192x192"/>
+    <link rel="stylesheet" href="./css/layout.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Clips</title>
+</head>
+
+<!--Search bar-->
+
+<div id="searchbox-background" onclick="closeSearchbox()"></div>
+<div id="search-box" class="search-box">
+    <a class="close-search" onclick="closeSearchbox()">
+        <i class="fa fa-close"></i>
+    </a>
+    <form class="search-box-input">
+        <h3>Tìm kiếm</h3>
+        <div class="searchbox-input-area">
+            <input class="search-box-text-input" type="search" placeholder="Nhập tên sản phẩm" value="" autocomplete="off">
+            <button class="searchbox-button" type="submit">
+                <i class="fa fa-search"></i>
+            </button>
+        </div>
+    </form>
+</div>
+
+<!--Contact form-->
+<div id="contact-form-container">
+    <div>
+        <form id="contact-form" class="contact-form" method="post">
+            <a onclick="closeContactForm()"><i class="fa fa-close"></i></a>
+            <h1>Contact</h1>
+
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name" required><br>
+        
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" required><br>
+
+            <label for="feedback">Your message (optional):</label>
+            <textarea id="feedback" name="feedback" rows="4" cols="50"></textarea><br>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</div>
+
+
+<!--Site header-->
+<header id="site-header" class="site-header">
+    <div class="inside-header">
+        <div class="header-widget"></div>
+
+        <div class="site-brand-container">
+            <div class="site-logo">
+                <a href="./index.html" title="Chăm Sóc Đôi Chân Bạn" rel="home">
+                    <img class="header-image" alt="Chăm Sóc Đôi Chân Bạn" src="./resources/layout/header_logo.svg" title="Chăm Sóc Đôi Chân Bạn">
+                </a>
+            </div>
+
+            <div class="site-branding">
+                <p class="main-title">
+                    <a href="./index.html" rel="home">Chăm Sóc Đôi Chân Bạn</a>
+                </p>                
+                <p class="site-description">Hơn 130 năm cùng những đôi tất Tuyệt vời</p>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+<!--Mobile navbar-->
+<nav id="mobile-navbar" class="mobile-navbar">
+    <div class="mobile-navbar-container">
+        <div class="mobile-navigation">
+            <a class="mobile-site-branding" href="./index.html" title="Chăm Sóc Đôi Chân Bạn" rel="home">
+                <img class="mobile-brand-image" alt="Chăm Sóc Đôi Chân Bạn" src="./resources/layout/header_logo.svg" title="Chăm Sóc Đôi Chân Bạn">
+            </a>
+    
+            <div class="mobile-icons-container">
+                <a class="search-icon" title="Search" onclick="openSearchbox()">
+                    <i class="fa fa-search"></i>
+                </a>
+                <a class="profile-icon" title="Profile" href="#">
+                    <i class="fa fa-user"></i>
+                </a>
+                <a class="cart-icon" title="Cart" href="#">
+                    <i class="fa fa-shopping-cart"></i>
+                </a>
+            </div>
+    
+            <div id="mobile-menu-toggle" class="mobile-menu-toggle">
+                <i class="fa fa-bars"></i>
+            </div>
+        </div>
+        
+
+        <div id="mobile-menu" class="mobile-menu">
+            <ul class="mobile-menu">
+                <li><a href="./index.html">HOME</a></li>
+                <li><a href="./bai_viet.html">BÀI VIẾT</a></li>
+                <li><a href="./gioi_thieu.html">GIỚI THIỆU</a></li>
+                <li><a href="./hoi_dap.html">HỎI & ĐÁP</a></li>
+                <li><a href="./clip.html">CLIPS</a></li>
+                <li><a href="./mua_hang.html">MUA HÀNG</a></li>
+                <li><a onclick="openContactForm()">LIÊN HỆ</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!--Standard navbar-->
+<nav id="standard-navbar">
+    <div class="navbar-container">
+        <ul class="navbar">
+            <li><a href="/index.html">HOME</a></li>
+            <li><a href="bai_viet.html">BÀI VIẾT</a></li>
+            <li><a href="./gioi_thieu.html">GIỚI THIỆU</a></li>
+            <li><a href="./hoi_dap.html">HỎI & ĐÁP</a></li>
+            <li><a href="./clip.html">CLIPS</a></li>
+            <li><a href="./mua_hang.html">MUA HÀNG</a></li>
+            <li><a onclick="openContactForm()">LIÊN HỆ</a></li>
+        </ul>
+
+        <div class="icons-container">
+            <a class="search-icon" title="Search" onclick="openSearchbox()">
+                <i class="fa fa-search"></i>
+            </a>
+            <a class="profile-icon" title="Profile" href="#">
+                <i class="fa fa-user"></i>
+            </a>
+            <a class="cart-icon" title="Cart" href="#">
+                <i class="fa fa-shopping-cart"></i>
+            </a>
+        </div>
+    </div>
+</nav>
+
+<!--Content--->
+<div class="main-clip">
+    <iframe src="https://www.youtube.com/embed/DDDlxPnFmCU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <h3>130 NĂM – MỘT THƯƠNG HIỆU FUKUSKE </h3>
+</div>
+
+<style>
+    .main-clip {
+        max-width: 90%;
+        margin: 0 auto 40px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        overflow: hidden;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        text-align: center;
+    }
+
+    .main-clip iframe {
+        width: 100%;
+        height: 500px; /* Bạn có thể điều chỉnh chiều cao theo ý muốn */
+        border: none;
+    }
+
+    .main-clip h3 {
+        margin-top: 10px;
+        font-size: 18px;
+    }
+</style>
+
+
+<div class="clips-section">
+    <h2>Chất lượng luôn đem lại những giá trị bền vững</h2>
+    <div class="clips-grid">
+        <div class="clip-item">
+            <video controls>
+                <source src="https://youtu.be/DDDlxPnFmCU?si=mKz8e9AAIlHHcXdb" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <h3>Bộ sưu tập TOUGH LEG</h3>
+        </div>
+        <div class="clip-item">
+            <video controls>
+                <source src="https://youtu.be/C8_0c1dIUgI?si=SF7Xw8Zu8eEriy0i" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <h3>Vớ y khoa Fukuske đến từ Nhật Bản có gì nổi bật</h3>
+        </div>
+        <div class="clip-item">
+            <video controls>
+                <source src="https://youtu.be/8pN_Ap4zeb8?si=hifMj66sybI65yMw" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <h3>Fukuske Panty Stocking - Made in Japan since 1882</h3>
+        </div>
+    </div>
+</div>
+
+<style>
+    .clips-section {
+        text-align: center;
+        margin: 50px 0;
+    }
+
+    .clips-section h2 {
+        font-size: 32px;
+        margin-bottom: 40px;
+        font-weight: bold;
+        color: #333;
+    }
+
+    .clips-grid {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+
+    .clip-item {
+        width: 30%;
+        margin-bottom: 40px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        overflow: hidden;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .clip-item video {
+        width: 100%;
+        height: auto;
+        border-bottom: 2px solid #ddd;
+    }
+
+    .clip-item h3 {
+        font-size: 18px;
+        margin: 10px;
+        font-weight: bold;
+        color: #444;
+    }
+
+    .clip-item:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+</style>
+
+<!--Site footer-->
+<div class="footer">
+    <p class="ft_lienket">LIÊN KẾT</p>
+
+    <div class="diemban">
+        <div class="mienbac">
+            <p class="nhaphanphoi_title" style="margin-bottom: 10px;">MIỀN BẮC</p>
+            <p class="nhaphanphoi_name" style="margin-bottom: 5px;">CÔNG TY CỔ PHẦN TM & XNKMINH ĐỨC PHÁT</p>
+            <p class="nhaphanphoi_address">Số 53 Ngõ 52 phố Quan Nhân, tổ 1, Phường Trung Hoà,
+                <br>Quận Cầu Giấy, Hà Nội
+            </p>
+            <br>
+            <p class="nhaphanphoi_link">
+                <span>
+                    <img src="./resources/layout/address_pointer.webp" style="margin-right: 5px;">ĐIỂM BÁN
+                </span>
+            </p>
+        </div>
+
+        <div class="mientrung">
+            <p class="nhaphanphoi_title" style="margin-bottom: 10px;">MIỀN TRUNG</p>
+            <p class="nhaphanphoi_name" style="margin-bottom: 5px;">CÔNG TY CỔ PHẦN SX & TM HSC - ĐÀ NẴNG</p>
+            <p class="nhaphanphoi_address">24 Tống Duy Tân, phường Hoà Mình,
+                <br>Quận Liên Chiểu, TP. Đà Nẵng
+            </p>
+            <br>
+            <p class="nhaphanphoi_link">
+                <span>
+                    <img src="./resources/layout/address_pointer.webp" style="margin-right: 5px;">ĐIỂM BÁN
+                </span>
+            </p>
+        </div>
+
+        <div class="miennam">
+            <p class="nhaphanphoi_title" style="margin-bottom: 10px;">MIỀN NAM</p>
+            <p class="nhaphanphoi_name" style="margin-bottom: 5px;">CÔNG TY CỔ PHẨN TM-DV-XNK HSC39 SÀI GÒN</p>
+            <p class="nhaphanphoi_address">1033 Huỳnh Tấn Phát, Phường Phú Thuận,
+                <br>Quận 7 - Thành phố Hồ Chí Minh
+            </p>
+            <br>
+            <p class="nhaphanphoi_link">
+                <span>
+                    <img src="./resources/layout/address_pointer.webp" style="margin-right: 5px;">ĐIỂM BÁN
+                </span>
+            </p>
+        </div>
+    </div>
+
+    <div class="lienket">
+        <a href="https://www.facebook.com/fukuske.vn/" target="blank">
+            <img class="footer_link" src="./resources/layout/facebookfooterw.webp">
+        </a>
+        <a href="https://youtube.com/@voykhoafukuske3102?si=gL_3W47_Jj4ONAmR" target="blank">
+            <img class="footer_link" src="./resources/layout/youtubefooterw.webp">
+        </a>
+        <a href="https://konni39.vn/" target="blank">
+            <img class="footer_link" src="./resources/layout/konnifooterw.webp">
+        </a>
+        <a href="https://vn.shp.ee/4oejGMm" target="blank">
+            <img class="footer_link" src="./resources/layout/shoppeefooterw.webp">
+        </a>
+    </div>
+
+    <div class="ban_quyen_page">
+        <p>Thiết kế Web</p>
+    </div>
+
+    <p class="footer_info">Nhóm 11</p>
+</div>
+
+<script src="./js/layout.js"></script>
+
+</html>
