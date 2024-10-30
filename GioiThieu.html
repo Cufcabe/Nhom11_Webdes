@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fusuke Timeline</title>
+
+    <link rel="shortcut icon" href="Resources/fukuske_icon.webp" sizes="192x192" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        .arrow {
+            background-color: transparent;
+            border: none;
+            font-size: 24px;
+            color: #666;
+            cursor: pointer;
+            outline: none;
+            transition: color 0.3s;
+            margin: 0 10px;
+            width: 100%;
+        }
+
+        .arrow:hover {
+            color: #333;
+        }
+    </style>
+</head>
+
+<!--Search bar-->
+
+<div id="searchbox-background" onclick="closeSearchbox()"></div>
+<div id="search-box" class="search-box">
+    <a class="close-search" onclick="closeSearchbox()">
+        <i class="fa fa-close"></i>
+    </a>
+    <form class="search-box-input">
+        <h3>Tìm kiếm</h3>
+        <div class="searchbox-input-area">
+            <input class="search-box-text-input" type="search" placeholder="Nhập tên sản phẩm" value=""
+                autocomplete="off">
+            <button class="searchbox-button" type="submit">
+                <i class="fa fa-search"></i>
+            </button>
+        </div>
+    </form>
+</div>
+
+<!--Contact form-->
+<div id="contact-form-container">
+    <div>
+        <form id="contact-form" class="contact-form" method="post">
+            <a onclick="closeContactForm()"><i class="fa fa-close"></i></a>
+            <h1>Contact</h1>
+
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name" required><br>
+
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" required><br>
+
+            <label for="feedback">Your message (optional):</label>
+            <textarea id="feedback" name="feedback" rows="4" cols="50"></textarea><br>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</div>
+
+
+<!--Site header-->
+<header id="site-header" class="site-header">
+    <div class="inside-header">
+        <div class="header-widget"></div>
+
+        <div class="site-brand-container">
+            <div class="site-logo">
+                <a href="Home.html" title="Chăm Sóc Đôi Chân Bạn" rel="home">
+                    <img class="header-image" alt="Chăm Sóc Đôi Chân Bạn" src="Resources/header_logo.svg"
+                        title="Chăm Sóc Đôi Chân Bạn">
+                </a>
+            </div>
+
+            <div class="site-branding">
+                <p class="main-title">
+                    <a href="Home.html" rel="home">Chăm Sóc Đôi Chân Bạn</a>
+                </p>
+                <p class="site-description">Hơn 130 năm cùng những đôi tất Tuyệt vời</p>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+<!--Mobile navbar-->
+<nav id="mobile-navbar" class="mobile-navbar">
+    <div class="mobile-navbar-container">
+        <div class="mobile-navbar-branding">
+            <p class="main-title">
+                <a href="Home.html" style="background-color: whitesmoke; color:black">Chăm Sóc Đôi Chân Bạn</a>
+            </p>
+        </div>
+
+        <div class="mobile-icons-container">
+            <a class="search-icon" title="Search" href="#" onclick="openSearchbox()">
+                <i class="fa fa-search"></i>
+            </a>
+            <a class="profile-icon" title="Profile" href="#">
+                <i class="fa fa-user"></i>
+            </a>
+            <a class="cart-icon" title="Cart" href="#">
+                <i class="fa fa-shopping-cart"></i>
+            </a>
+        </div>
+
+        <div id="mobile-menu-toggle" class="mobile-menu-toggle">&#9776;</div>   
+    </div>
+    <div id="mobile-menu" class="mobile-menu">
+        <ul class="mobile-menu">
+            <li><a class="hightlight" href="#">HOME</a></li>
+            <li><a href="MuaHang.html" id="mobile-menu-can-dropdown" class="mobile-menu-can-dropdown">SẢN PHẨM</a></li>
+            <li><a href="BaiViet.html">BÀI VIẾT</a></li>
+            <li><a href="GioiTHieu.html">GIỚI THIỆU</a></li>
+            <li><a href="HoiDap.html">HỎI & ĐÁP</a></li>
+            <li><a href="Clips.html">CLIPS</a></li>
+            <li>
+                <a href="#" id="mobile-menu-can-dropdown-2" class="mobile-menu-can-dropdown">MUA HÀNG</a>
+                <ul class="mobile-dropdown-menu" id="mobile-dropdown-menu-2">
+                    <li><a href="https://shopee.vn/fukuske_official">Shopee</a></li>
+                    <li><a href="https://tiki.vn/cua-hang/genki-fami-tpcn-nhat-ban">Tiki</a></li>
+                </ul>
+            </li>
+            <li><a href="#" onclick="openContactForm()">LIÊN HỆ</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!--Standard navbar-->
+<nav id="standard-navbar">
+    <div class="navbar-container">
+        <ul class="navbar">
+            <li><a href="Home.html">HOME</a></li>
+            <li><a href="MuaHang.html" id="mobile-menu-can-dropdown" class="mobile-menu-can-dropdown">SẢN PHẨM</a></li>
+            <li><a href="BaiViet.html">BÀI VIẾT</a></li>
+            <li><a class="hightlight" href="#">GIỚI THIỆU</a></li>
+            <li><a href="HoiDap.html">HỎI & ĐÁP</a></li>
+            <li><a href="Clips.html">CLIPS</a></li>
+            <li>
+                <a href="#" class="dropdown-toggle">MUA HÀNG</a>
+                <ul class="dropdown-menu">
+                    <li><a href="https://shopee.vn/fukuske_official">Shopee</a></li>
+                    <li><a href="https://tiki.vn/cua-hang/genki-fami-tpcn-nhat-ban">Tiki</a></li>
+                </ul>
+            </li>
+            <li><a href="#" onclick="openContactForm()">LIÊN HỆ</a></li>
+        </ul>
+
+        <div class="icons-container">
+            <a class="search-icon" title="Search" href="#" onclick="openSearchbox()">
+                <i class="fa fa-search"></i>
+            </a>
+            <a class="profile-icon" title="Profile" href="#">
+                <i class="fa fa-user"></i>
+            </a>
+            <a class="cart-icon" title="Cart" href="#">
+                <i class="fa fa-shopping-cart"></i>
+            </a>
+        </div>
+    </div>
+</nav>
+
+<!--Content--->
+
+<div class="container d-flex justify-content-center">
+    <div class="years">
+        <button>Giới thiệu</button>
+        <button>1882</button>
+        <button>1885</button>
+        <button>1897</button>
+        <button>1900</button>
+        <button>1912</button>
+        <button>1919</button>
+        <button>1924</button>
+        <button>1928</button>
+        <button>1929</button>
+        <button>1932</button>
+        <button>1936</button>
+        <button>1947</button>
+        <button>1950</button>
+        <button>1956</button>
+        <button>1958</button>
+        <button>1964</button>
+        <button>1982</button>
+        <button>1992</button>
+    </div>
+
+    <div class="content">
+        <div id="Giới thiệu" class="content-section active">
+            <h2>Giới thiệu</h2>
+            <img src="https://fukuske.vn/wp-content/uploads/2021/03/history_title.svg" alt="Giới thiệu về Fusuke">
+        </div>
+
+        <div id="year1882" class="content-section">
+            <div class="year-content" style="display: flex; align-items: stretch;"> <!-- Sử dụng align-items: stretch để hai bên cân đối -->
+                <div class="left-section" style="flex: 1; text-align: left; padding-right: 20px;">
+                    <div class="year-header">
+                        <h1>1882</h1>
+                        <p>Năm thứ 15 của thời Minh Trị</p>
+                    </div>
+                    <div class="year-image">
+                        <img src="https://fukuske.vn/wp-content/uploads/2021/03/1882_img.png" alt="Image for 1882" style="width: 100%; max-width: 300px;"> <!-- Giữ ảnh gốc và căn chỉnh kích thước -->
+                    </div>
+                </div>
+        
+                <div class="right-section" style="flex: 2; text-align: left; display: flex; align-items: center;"> <!-- Căn giữa nội dung văn bản theo chiều dọc -->
+                    <div class="year-text">
+                        <h2>Tsujimoto Fukumatsu thành lập cửa hàng quần áo tabi</h2>
+                        <p>
+                            Fukumatsu Tsujimoto, năm nay 21 tuổi, thành lập một cửa hàng quần áo tabi. Thương hiệu là "Marufuku" 
+                            theo tên của nó. Tuy nhiên, thế giới đang ở trong tình trạng suy thoái chưa từng có sau cuộc Duy tân Minh Trị. 
+                            Fukumatsu đã rơi vào khủng hoảng tài chính. Ông cùng với vợ kinh doanh hàng gia dụng để lấy vốn.
+                            Fukumatsu quyết định sống chết với việc tạo ra vớ Tabi. Ngoài ra, Unsaiya "Minamisaiwai" đồng cảm với 
+                            tính cách của Fukumatsu, sẵn sàng cung cấp vải thô. Sự giúp đỡ này đã giúp Fukumatsu thoát khỏi tình trạng khó khăn.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="navigation-arrows" style="text-align: center; margin-top: 20px;">
+                <button class="arrow" onclick="showContent('Giới thiệu')">&#9650;</button>
+                <button class="arrow" onclick="showContent('year1885')">&#9660;</button>
+            </div>
+        </div>
+        
+
+        <div id="year1885" class="content-section">
+            <div class="year-content" style="display: flex; align-items: stretch;"> <!-- Đảm bảo hai bên nội dung có chiều cao bằng nhau -->
+                <div class="left-section" style="flex: 1; text-align: left; padding-right: 20px;">
+                    <div class="year-header">
+                        <h1>1885</h1>
+                        <p>Năm Minh Trị thứ 28</p>
+                    </div>
+                    <div class="year-image">
+                        <img src="https://fukuske.vn/wp-content/uploads/2021/03/1895-1_img.png" alt="Image for 1885" style="width: 100%; max-width: 300px;"> <!-- Giữ nguyên ảnh gốc và căn chỉnh kích thước -->
+                    </div>
+                </div>
+        
+                <div class="right-section" style="flex: 2; text-align: left; display: flex; align-items: center;"> <!-- Căn giữa văn bản theo chiều dọc -->
+                    <div class="year-text">
+                        <h2>May bao chân máy bằng Máy may đầu tiên tại Nhật Bản</h2>
+                        <p>Sau vài năm vượt qua khó khăn tài chính, Fukumatsu đã mở rộng sản xuất và cải tiến chất lượng vớ Tabi.</p>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="navigation-arrows" style="text-align: center; margin-top: 20px;">
+                <button class="arrow" onclick="showContent('year1882')">&#9650;</button>
+                <button class="arrow" onclick="showContent('year1897')">&#9660;</button>
+            </div>
+        </div>
+        
+
+        <div id="year1897" class="content-section">
+            <div class="year-content" style="display: flex; align-items: flex-start;">
+                <div class="left-section" style="flex: 1; text-align: left; padding-right: 20px;">
+                    <div class="year-header">
+                        <h1>1897</h1>
+                        <p>Năm thứ 30 của thời Minh Trị</p>
+                    </div>
+                    <div class="year-image">
+                        <img src="https://fukuske.vn/wp-content/uploads/2021/03/1897_img.png" alt="Image for 1897" style="width: 100%; max-width: 300px;">
+                    </div>
+                </div>
+                <div class="right-section" style="flex: 2; text-align: left;">
+                    <div class="year-text">
+                        <h2>Nhà máy được xây dựng trên diện tích 3000 mét vuông</h2>
+                        <p>
+                            Năm nay, nhà máy đầu tiên được xây dựng trên diện tích 3000 mét vuông, mở ra một chương mới 
+                            cho sự phát triển của thương hiệu "Marufuku". Với nhà máy này, Fukumatsu có thể gia tăng năng lực sản xuất 
+                            và đáp ứng nhu cầu ngày càng cao của thị trường.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="navigation-arrows" style="text-align: center; margin-top: 20px;">
+                <button class="arrow" onclick="showContent('year1885')">&#9650;</button>
+                <button class="arrow" onclick="showContent('year1900')">&#9660;</button>
+            </div>
+        </div>
+        
+        <div id="year1900" class="content-section">
+            <div class="year-content" style="display: flex; align-items: flex-start;">
+                <div class="left-section" style="flex: 1; text-align: left; padding-right: 20px;">
+                    <div class="year-header">
+                        <h1>1900</h1>
+                        <p>Năm thứ 33 của thời Minh Trị</p>
+                    </div>
+                    <div class="year-image">
+                        <img src="https://fukuske.vn/wp-content/uploads/2021/03/1900_img.png" alt="Image for 1900" style="width: 100%; max-width: 300px;">
+                    </div>
+                </div>
+                <div class="right-section" style="flex: 2; text-align: left;">
+                    <div class="year-text">
+                        <h2>Các sản phẩm Tabi của Marufuku được phân phối rộng rãi</h2>
+                        <p>
+                            Các sản phẩm Tabi của Marufuku được phân phối rộng rãi trên toàn quốc. 
+                            Chất lượng và thiết kế độc đáo giúp thương hiệu "Marufuku" trở thành cái tên quen thuộc 
+                            trong lòng người tiêu dùng.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="navigation-arrows" style="text-align: center; margin-top: 20px;">
+                <button class="arrow" onclick="showContent('year1897')">&#9650;</button>
+                <button class="arrow" onclick="showContent('year1912')">&#9660;</button>
+            </div>
+        </div>
+        
+    
+    <div id="year1912" class="content-section">
+        <div class="year-content" style="display: flex; align-items: flex-start;">
+            <div class="left-section" style="flex: 1; text-align: left; padding-right: 20px;">
+                <div class="year-header">
+                    <h1>1912</h1>
+                    <p>Năm thứ 45 của thời Minh Trị</p>
+                </div>
+                <div class="year-image">
+                    <img src="https://fukuske.vn/wp-content/uploads/2021/03/1912_img.png" alt="Image for 1912" style="border-radius: 50%; width: 300px;">
+                </div>
+            </div>
+    
+            <div class="right-section" style="flex: 2; text-align: left;">
+                <div class="year-text">
+                    <h2>Mở rộng kênh bán hàng hướng tới những người không mang tất</h2>
+                    <p>
+                        Sau cái chết của Fukumatsu, Toyosaburo kế thừa di chúc của Fukumatsu. Với mục tiêu mở rộng kênh bán hàng, Fukuske hướng đến Tokyo. Tuy nhiên, người dân Tokyo tự hào về Edokko. Ngoài ra, trong số các triệu phú và gia đình nổi tiếng có ý tưởng chủ đạo là tabi được khâu bằng tay. Bạn sẽ có một thời gian khó khăn. Toyosaburo nói, “Nếu chúng ta cung cấp tất rẻ và thiết thực, nó chắc chắn sẽ bán được trong một vài năm hoặc vài thập kỷ. Chỉ 80% người đi chân trần không đi tất Fukusuke Tabi sắp gia nhập thị trường.” Fukuske tiếp tục giữ vững lập trường mở rộng kênh bán hàng.
+                    </p>
+                </div>
+            </div>
+        </div> 
+    
+        <div class="navigation-arrows" style="text-align: center; margin-top: 20px;">
+            <button class="arrow" onclick="showContent('year1900')">&#9650;</button>
+            <button class="arrow" onclick="showContent('year1919')">&#9660;</button>
+        </div>
+    </div>    
+    
+    <div id="year1919" class="content-section">
+        <div class="year-content" style="display: flex; align-items: flex-start;"> <!-- Sử dụng flex-start để căn chỉnh phần nội dung -->
+            <div class="left-section" style="flex: 1; text-align: left; padding-right: 20px;">
+                <div class="year-header">
+                    <h1>1919</h1>
+                    <p>Năm Taisho thứ 8</p>
+                </div>
+                <div class="year-image">
+                    <img src="https://fukuske.vn/wp-content/uploads/2021/03/1919_img.png" alt="Image for 1919" style="border-radius: 50%; width: 300px;">
+                </div>
+            </div>
+    
+            <div class="right-section" style="flex: 2; text-align: left;">
+                <div class="year-text">
+                    <h2>Ishigane Nagasaka tạo ra Logo CI</h2>
+                    <p>Nhãn hiệu Fukusuke là từ hình thức lâu đời nhất mà Fukumatsu đã đăng ký làm nhãn hiệu. Hình dạng đã phát triển để phản ánh thời đại đó. Vào thời Taisho, đôi mắt trở nên nhu mì và điềm tĩnh hơn, Ngoài ra còn có một phần mào nhỏ được thiết kế gộp chữ phúc “福” vào đó. Mặt khác, vào thời điểm đó, kiểu chữ của tên công ty của Fukusuke vẫn chưa thống nhất. Vì vậy, công ty đã yêu cầu ông Ishigane Nagasaka tạo ra một kiểu chữ thống nhất. Chúng tôi đã giới thiệu cái mà bây giờ chúng tôi gọi là CI. Logo CI sắc nét và trang nhã lần đầu tiên ra đời.</p>
+                </div>
+            </div>
+        </div> 
+    
+        <div class="navigation-arrows" style="text-align: center; margin-top: 20px;"> <!-- Căn giữa mũi tên -->
+            <button class="arrow" onclick="showContent('year1912')">&#9650;</button>
+            <button class="arrow" onclick="showContent('year1924')">&#9660;</button>
+        </div>
+    </div>
+    
+    <div id="year1924" class="content-section">
+        <div class="year-content" style="display: flex; align-items: flex-start;">
+            <div class="left-section" style="flex: 1; text-align: left; padding-right: 20px;">
+                <div class="year-header">
+                    <h1>1924</h1>
+                    <p>Năm Taisho thứ 13</p>
+                </div>
+                <div class="year-image">
+                    <img src="https://fukuske.vn/wp-content/uploads/2021/03/1924-1_img.png" alt="Image for 1924" style="border-radius: 50%; width: 300px;">
+                </div>
+            </div>
+    
+            <div class="right-section" style="flex: 2; text-align: left;">
+                <div class="year-text">
+                    <h2>Một cuộc triển lãm đã được tổ chức</h2>
+                    <p>
+                        Là một phần của quảng cáo, chúng tôi tập trung vào việc tổ chức các cuộc triển lãm khác nhau. Đó là “Triển lãm chân (Foot Exhibition)” và “Triển lãm Fukusuke-san (Triển lãm Fuku)”. Triển lãm chân là một cuộc theo đuổi học thuật và sở thích về chân. Ngoài ra, triển lãm Fukusuke còn trưng bày búp bê Fukusuke, văn học, búp bê được các gia đình nổi tiếng trên khắp cả nước trân trọng và được tổ chức khắp cả nước sau đó vì sự nổi tiếng của nó.
+                        <br><br>
+                        Ảnh Phải: Áp phích cho “Triển lãm Fukusuke-san” của Matsuzakaya Ueno.
+                        <br>
+                        Ảnh Trái: “Triển lãm bàn chân”. Nioh Waraji của Tokyo Kaminarimon cũng được trưng bày.
+                    </p>
+                </div>
+            </div>
+        </div> 
+    
+        <div class="navigation-arrows" style="text-align: center; margin-top: 20px;">
+            <button class="arrow" onclick="showContent('year1919')">&#9650;</button>
+            <button class="arrow" onclick="showContent('year1928')">&#9660;</button>
+        </div>
+    </div>
+    
+    <div id="year1928" class="content-section">
+        <div class="year-content" style="display: flex; align-items: flex-start;">
+            <div class="left-section" style="flex: 1; text-align: left; padding-right: 20px;">
+                <div class="year-header">
+                    <h1>1928</h1>
+                    <p>Năm sowa thứ 3</p>
+                </div>
+                <div class="year-image">
+                    <img src="https://fukuske.vn/wp-content/uploads/2021/03/1928_img.png" alt="Image for 1928" style="border-radius: 50%; width: 300px;">
+                </div>
+            </div>
+    
+            <div class="right-section" style="flex: 2; text-align: left;">
+                <div class="year-text">
+                    <h2>Xây dựng tháp quảng cáo trên Toàn quốc</h2>
+                    <p>Đa dạng khắp cả nước Đèn quảng cáo của Fukusuke được chế tạo. Vào năm thứ 12 của thời đại Taisho, ở Hashizume ở Hakata Nakasu Một đèn quảng cáo lớn đã được thiết lập. Đèn điện quảng cáo đầu tiên của Fukusuke được hoàn thành tại Osaka. Đèn ngũ sắc nhấp nháy rực rỡ, tô màu cho Dotonbori. Chiều cao là 30 mét. Điều đặc biệt là nó vừa tầm mắt của những người qua đường. Fukuske đã lắp một chiếc đồng hồ Thụy Sĩ lớn với đường kính 3,4 mét. Thay vì một ngọn hải đăng ở Nakasu, Bạn có thể thấy các em học sinh tiểu học trong chuyến đi học đang tụ tập ở đây …</p>
+                </div>
+            </div>
+        </div> 
+    
+        <div class="navigation-arrows" style="text-align: center; margin-top: 20px;">
+            <button class="arrow" onclick="showContent('year1924')">&#9650;</button>
+            <button class="arrow" onclick="showContent('year1929')">&#9660;</button>
+        </div>
+    </div>
+    
+    <div id="year1929" class="content-section">
+        <div class="year-content" style="display: flex; align-items: flex-start;">
+            <div class="left-section" style="flex: 1; text-align: left; padding-right: 20px;">
+                <div class="year-header">
+                    <h1>1929</h1>
+                    <p>Năm sowa thứ 4</p>
+                </div>
+                <div class="year-image">
+                    <img src="https://fukuske.vn/wp-content/uploads/2021/03/1929_img.png" alt="Image for 1929" style="border-radius: 50%; width: 300px;">
+                </div>
+            </div>
+    
+            <div class="right-section" style="flex: 2; text-align: left;">
+                <div class="year-text">
+                    <h2>Nhà máy ở nước ngoài được xây dựng</h2>
+                    <p>Khai trương nhà máy Fukuske tại Trung Quốc. Năm sowa 4 xây dựng nhà máy tại cảng đảo Tanjong Puriok. Năm 1945 Nhà máy đóng cửa cùng với thời điểm kết thúc chiến tranh. Hồi hương nhà máy An toàn</p>
+                </div>
+            </div>
+        </div> 
+    
+        <div class="navigation-arrows" style="text-align: center; margin-top: 20px;">
+            <button class="arrow" onclick="showContent('year1928')">&#9650;</button>
+            <button class="arrow" onclick="showContent('year1932')">&#9660;</button>
+        </div>
+    </div>    
+
+    <div id="year1932" class="content-section">
+        <div class="year-content" style="display: flex; align-items: flex-start;"> <!-- Sử dụng flex-start để căn chỉnh phần nội dung -->
+            <div class="left-section" style="flex: 1; text-align: left; padding-right: 20px;">
+                <div class="year-header">
+                    <h1>1932</h1>
+                    <p>Năm Sowa thứ 7</p>
+                </div>
+            </div>
+            <div class="right-section" style="flex: 2; text-align: left;">
+                <div class="year-text">
+                    <h2>Vận hành với phương châm “Bằng cả trái tim”</h2>
+                    <p>Đó là thời đại mà quần áo Nhật Bản đang chuyển sang quần áo phương Tây. Để nắm bắt dòng chảy của những thời điểm này ngay từ giai đoạn đầu, Tất mới đã được thêm vào. Từ “tinh thần bảo vệ đôi chân của bạn”, đồng thời là đôi tất của bạn. Ý tưởng là làm tất. Với phương châm “Magokoro” Chúng tôi đã nỗ lực để tạo ra những sản phẩm chất lượng cao. Sau đó, vào năm 1934, một nhà máy sản xuất tất được xây dựng tại trụ sở chính. Chúng tôi đã nỗ lực để phát triển công nghệ hơn nữa. Ngoài những khó khăn trong sản xuất, nhiều quy hoạch sản phẩm khác nhau chỉ dành riêng cho tất, vượt qua nhiều khó khăn, chẳng hạn như dự đoán xu hướng. Năm 1945, nó chiếm khoảng 10% mức tiêu thụ quốc gia và công ty Fukuske đã đứng đầu toàn ngành.</p>
+                </div>
+            </div>
+        </div>
+    
+        <div class="navigation-arrows" style="text-align: center; margin-top: 20px;">
+            <button class="arrow" onclick="showContent('year1929')">&#9650;</button>
+            <button class="arrow" onclick="showContent('year1936')">&#9660;</button>
+        </div>
+    </div>
+    
+    <div id="year1936" class="content-section">
+        <div class="year-content" style="display: flex; align-items: flex-start;"> <!-- Sử dụng flex-start để căn chỉnh phần nội dung -->
+            <div class="left-section" style="flex: 1; text-align: left; padding-right: 20px;">
+                <div class="year-header">
+                    <h1>1936</h1>
+                    <p>Năm Sowa thứ 11</p>
+                </div>
+            </div>
+            <div class="right-section" style="flex: 2; text-align: left;">
+                <div class="year-text">
+                    <h2>Thương mại hóa sản phẩm Tất lụa nữ</h2>
+                    <p>Năm 1945, tất lụa của phụ nữ, chiếc tất lụa dài đến đầu gối đã hoàn thành. Sản xuất bằng máy móc hiện đại, tất nữ chất vải tốt, màu đẹp, mặc vào thoải mái, sản phẩm trở nên phổ biến.</p>
+                </div>
+            </div>
+        </div>
+    
+        <div class="navigation-arrows" style="text-align: center; margin-top: 20px;">
+            <button class="arrow" onclick="showContent('year1932')">&#9650;</button>
+            <button class="arrow" onclick="showContent('year1947')">&#9660;</button>
+        </div>
+    </div>
+    
+    <div id="year1947" class="content-section">
+        <div class="year-content" style="display: flex; align-items: flex-start;"> <!-- Sử dụng flex-start để căn chỉnh phần nội dung -->
+            <div class="left-section" style="flex: 1; text-align: left; padding-right: 20px;">
+                <div class="year-header">
+                    <h1>1947</h1>
+                    <p>Năm Sowa thứ 22</p>
+                </div>
+                <div class="year-image">
+                    <img src="https://fukuske.vn/wp-content/uploads/2021/03/1947_img.png" alt="Image for 1947" style="border-radius: 50%; width: 300px;">
+                </div>
+            </div>
+            <div class="right-section" style="flex: 2; text-align: left;">
+                <div class="year-text">
+                    <h2>Đón tiếp Nhật hoàng</h2>
+                    <p>Nhật hoàng ghé thăm nhà máy sản xuất của Fukuske. Ngài đã nói, "Bởi bì nó là một ngành quan trọng, hãy cùng nhau nỗ lực hơn nữa trong thời gian tới." Nhật hoàng cũng quan tâm và yêu thích búp bê biểu tượng Fukuske.</p>
+                </div>
+            </div>
+        </div>
+    
+        <div class="navigation-arrows" style="text-align: center; margin-top: 20px;">
+            <button class="arrow" onclick="showContent('year1936')">&#9650;</button>
+            <button class="arrow" onclick="showContent('year1950')">&#9660;</button>
+        </div>
+    </div>
+    
+    <div id="year1950" class="content-section">
+        <div class="year-content" style="display: flex; align-items: flex-start;">
+            <div class="left-section" style="flex: 1; text-align: left; padding-right: 20px;">
+                <div class="year-header">
+                    <h1>1950</h1>
+                    <p>Năm Showa thứ 25</p>
+                </div>
+                <div class="year-image">
+                    <img src="https://fukuske.vn/wp-content/uploads/2021/03/1950-1_img.png" alt="Image for 1950" style="border-radius: 50%; width: 300px;">
+                </div>
+            </div>
+            <div class="right-section" style="flex: 2; text-align: left;">
+                <div class="year-text">
+                    <h2>Là công ty đầu tiên sử dụng khí cầu để quảng cáo</h2>
+                    <p>
+                        Ông Fukusuke chào từ bầu trời ở nhiều nơi khác nhau. Ngay cả trong bài hát nổi tiếng “Ồ, thế là xong” 
+                        lúc bấy giờ, câu hát “Sky Nya Today cũng là một quả bóng quảng cáo” đã phản ánh truyền thống quảng cáo bằng khí cầu. 
+                        Fukusuke là người đầu tiên sử dụng khinh khí cầu quảng cáo để đưa thương hiệu lên cao.
+                    </p>
+                </div>
+            </div>
+        </div>
+    
+        <div class="navigation-arrows" style="text-align: center; margin-top: 20px;">
+            <button class="arrow" onclick="showContent('year1947')">&#9650;</button>
+            <button class="arrow" onclick="showContent('year1956')">&#9660;</button>
+        </div>
+    </div>
+    
+    <div id="year1956" class="content-section">
+        <div class="year-content" style="display: flex; align-items: flex-start;">
+            <div class="left-section" style="flex: 1; text-align: left; padding-right: 20px;">
+                <div class="year-header">
+                    <h1>1956</h1>
+                    <p>Năm Showa thứ 31</p>
+                </div>
+                <div class="year-image">
+                    <img src="https://fukuske.vn/wp-content/uploads/2021/03/1956_img.png" alt="Image for 1956" style="border-radius: 50%; width: 300px;">
+                </div>
+            </div>
+            <div class="right-section" style="flex: 2; text-align: left;">
+                <div class="year-text">
+                    <h2>Đo chân bằng dụng cụ 3D</h2>
+                    <p>Với câu cửa miệng “Kích thước vừa vặn khi bạn xỏ chân vào” Công ty đã sử dụng dụng cụ đo kích thước chân 3D...</p>
+                </div>
+            </div>
+        </div>
+        <div class="navigation-arrows" style="text-align: center; margin-top: 20px;">
+            <button class="arrow" onclick="showContent('year1950')">&#9650;</button>
+            <button class="arrow" onclick="showContent('year1958')">&#9660;</button>
+        </div>
+    </div>
+    
+    <div id="year1958" class="content-section">
+        <div class="year-content" style="display: flex; align-items: flex-start;">
+            <div class="left-section" style="flex: 1; text-align: left; padding-right: 20px;">
+                <div class="year-header">
+                    <h1>1958</h1>
+                    <p>Năm Showa thứ 33</p>
+                </div>
+                <div class="year-image">
+                    <img src="https://fukuske.vn/wp-content/uploads/2021/03/1958_img.png" alt="Image for 1958" style="border-radius: 50%; width: 300px;">
+                </div>
+            </div>
+            <div class="right-section" style="flex: 2; text-align: left;">
+                <div class="year-text">
+                    <h2>Máy may thiết kế tốt đầu tiên trong ngành công nghiệp</h2>
+                    <p>Vào đầu thời Minh Trị, dựa trên máy khâu được lưu truyền từ Châu Âu và Hoa Kỳ...</p>
+                </div>
+            </div>
+        </div>
+        <div class="navigation-arrows" style="text-align: center; margin-top: 20px;">
+            <button class="arrow" onclick="showContent('year1956')">&#9650;</button>
+            <button class="arrow" onclick="showContent('year1964')">&#9660;</button>
+        </div>
+    </div>
+    
+    <div id="year1964" class="content-section">
+        <div class="year-content" style="display: flex; align-items: flex-start;">
+            <div class="left-section" style="flex: 1; text-align: left; padding-right: 20px;">
+                <div class="year-header">
+                    <h1>1964</h1>
+                    <p>Năm Showa thứ 39</p>
+                </div>
+                <div class="year-image">
+                    <img src="https://fukuske.vn/wp-content/uploads/2021/03/1964_img.png" alt="Image for 1964" style="border-radius: 50%; width: 300px;">
+                </div>
+            </div>
+            <div class="right-section" style="flex: 2; text-align: left;">
+                <div class="year-text">
+                    <h2>Đổi tên công ty thành Fukuske Corporation</h2>
+                    <p>Bây giờ chúng tôi đã trở thành nhà sản xuất phụ kiện quần áo nói chung...</p>
+                </div>
+            </div>
+        </div>
+        <div class="navigation-arrows" style="text-align: center; margin-top: 20px;">
+            <button class="arrow" onclick="showContent('year1958')">&#9650;</button>
+            <button class="arrow" onclick="showContent('year1982')">&#9660;</button>
+        </div>
+    </div>
+    
+    
+    <div id="year1982" class="content-section">
+        <div class="year-header" style="display: flex; align-items: center;">
+            <div style="flex: 1; text-align: left;">
+                <h1>1982</h1>
+                <p>Năm Sowa thứ 57</p>
+            </div>
+            <div style="flex: 2; text-align: left; padding-left: 20px;">
+                <div class="year-text">
+                    <h2>Kỷ niệm 100 năm thành lập</h2>
+                    <p>Tháng 1 năm 1982, Công ty kỷ niệm 100 năm ngày thành lập.</p>
+                </div>
+            </div>
+        </div>
+        <div class="navigation-arrows" style="text-align: center; margin-top: 20px;">
+            <button class="arrow" onclick="showContent('year1964')">&#9650;</button>
+            <button class="arrow" onclick="showContent('year1992')">&#9660;</button>
+        </div>
+    </div>   
+      
+    <div id="year1992" class="content-section">
+        <div class="year-content" style="display: flex; align-items: flex-start;">
+            <div class="left-section" style="flex: 1; text-align: left; padding-right: 20px;">
+                <div class="year-header">
+                    <h1>1992</h1>
+                    <p>Năm Heiwa thứ 4</p>
+                </div>
+                <div class="year-image">
+                    <img src="https://fukuske.vn/wp-content/uploads/2021/03/1992_img.png" alt="Image for 1992" style="border-radius: 50%; width: 300px;">
+                </div>
+            </div>
+            <div class="right-section" style="flex: 2; text-align: left;">
+                <div class="year-text">
+                    <h2>Xây đài tưởng niệm trên núi Koya</h2>
+                    <p>Kể từ khi thành lập năm 1890, các đối tác kinh doanh đã hỗ trợ chúng tôi trong một lịch sử lâu dài. Tháng 11 năm 1992, một đài tưởng niệm công ty đã được dựng lên trên núi Koya, nhân kỷ niệm 110 năm thành lập Fukuske. Tượng Fukusuke, một linh mục Phật giáo nổi tiếng, được chế tác bởi Tiến sĩ Sohi Matsuhisa, đặt trên đế mô phỏng núi Phú Sĩ, thể hiện lòng biết ơn và sự tri ân sâu sắc đến những người đã góp phần vào sự phát triển của công ty.</p>
+                </div>
+            </div>
+        </div>
+        <div class="navigation-arrows" style="text-align: center; margin-top: 20px;">
+            <button class="arrow" onclick="showContent('year1982')">&#9650;</button>
+        </div>
+    </div>
+</div>
+</div>
+<!--Site footer-->
+<div class="footer">
+    <p class="ft_lienket">LIÊN KẾT</p>
+
+    <div class="diemban">
+        <div class="mienbac">
+            <p class="nhaphanphoi_title" style="margin-bottom: 10px;">MIỀN BẮC</p>
+            <p class="nhaphanphoi_name" style="margin-bottom: 5px;">CÔNG TY CỔ PHẦN TM & XNKMINH ĐỨC PHÁT</p>
+            <p class="nhaphanphoi_address">Số 53 Ngõ 52 phố Quan Nhân, tổ 1, Phường Trung Hoà,
+                <br>Quận Cầu Giấy, Hà Nội
+            </p>
+            <br>
+            <p class="nhaphanphoi_link">
+                <span>
+                    <img src="Resources/address_pointer.webp" style="margin-right: 5px;">ĐIỂM BÁN
+                </span>
+            </p>
+        </div>
+
+        <div class="mientrung">
+            <p class="nhaphanphoi_title" style="margin-bottom: 10px;">MIỀN TRUNG</p>
+            <p class="nhaphanphoi_name" style="margin-bottom: 5px;">CÔNG TY CỔ PHẦN SX & TM HSC - ĐÀ NẴNG</p>
+            <p class="nhaphanphoi_address">24 Tống Duy Tân, phường Hoà Mình,
+                <br>Quận Liên Chiểu, TP. Đà Nẵng
+            </p>
+            <br>
+            <p class="nhaphanphoi_link">
+                <span>
+                    <img src="Resources/address_pointer.webp" style="margin-right: 5px;">ĐIỂM BÁN
+                </span>
+            </p>
+        </div>
+
+        <div class="miennam">
+            <p class="nhaphanphoi_title" style="margin-bottom: 10px;">MIỀN NAM</p>
+            <p class="nhaphanphoi_name" style="margin-bottom: 5px;">CÔNG TY CỔ PHẨN TM-DV-XNK HSC39 SÀI GÒN</p>
+            <p class="nhaphanphoi_address">1033 Huỳnh Tấn Phát, Phường Phú Thuận,
+                <br>Quận 7 - Thành phố Hồ Chí Minh
+            </p>
+            <br>
+            <p class="nhaphanphoi_link">
+                <span>
+                    <img src="Resources/address_pointer.webp" style="margin-right: 5px;">ĐIỂM BÁN
+                </span>
+            </p>
+        </div>
+    </div>
+
+    <div class="lienket">
+        <a href="https://www.facebook.com/fukuske.vn/" target="blank">
+            <img class="footer_link" src="Resources/facebookfooterw.webp">
+        </a>
+        <a href="https://youtube.com/@voykhoafukuske3102?si=gL_3W47_Jj4ONAmR" target="blank">
+            <img class="footer_link" src="Resources/youtubefooterw.webp">
+        </a>
+        <a href="https://konni39.vn" target="blank">
+            <img class="footer_link" src="Resources/konnifooterw.webp">
+        </a>
+        <a href="https://vn.shp.ee/4oejGMm" target="blank">
+            <img class="footer_link" src="Resources/shoppeefooterw.webp">
+        </a>
+    </div>
+
+    <div class="ban_quyen_page">
+        <p>Thiết kế Web</p>
+    </div>
+
+    <p class="footer_info">Nhóm 11</p>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const sections = Array.from(document.querySelectorAll('.content-section'));
+        const yearButtons = Array.from(document.querySelectorAll('.years button'));
+        let currentIndex = 0;
+
+        function showSection(index) {
+            sections.forEach((section, i) => {
+                section.classList.toggle('active', i === index);
+            });
+            yearButtons.forEach((button, i) => {
+                button.classList.toggle('active', i === index);
+            });
+        }
+
+        // Đăng ký sự kiện lăn chuột để điều hướng
+        document.querySelector('.content').addEventListener('wheel', function(event) {
+            event.preventDefault();
+            if (event.deltaY > 0 && currentIndex < sections.length - 1) {
+                currentIndex++;
+            } else if (event.deltaY < 0 && currentIndex > 0) {
+                currentIndex--;
+            }
+            showSection(currentIndex);
+        });
+
+        yearButtons.forEach((button, index) => {
+            button.addEventListener('click', () => {
+                currentIndex = index;
+                showSection(currentIndex);
+            });
+        });
+
+        // Hiển thị phần đầu tiên
+        showSection(currentIndex);
+
+        function showContent(year) {
+        const sections = document.querySelectorAll('.content-section');
+        sections.forEach(section => {
+            section.classList.remove('active');
+        });
+        document.getElementById(year).classList.add('active');
+    }
+    });
+</script>
+<script src="script.js"></script>
+
+</html>

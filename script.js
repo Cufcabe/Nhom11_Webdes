@@ -57,3 +57,31 @@ function openContactForm() {
 function closeContactForm() {
     document.getElementById("contact-form-container").style.display = "none";
 }
+
+function showContent(sectionId) {
+    // Ẩn tất cả nội dung
+    var sections = document.querySelectorAll('.content-section');
+    sections.forEach(function (section) {
+        section.classList.remove('active');
+    });
+
+    // Hiện nội dung mới
+    var activeSection = document.getElementById(sectionId);
+    activeSection.classList.add('active');
+}
+
+function toggleAnswer(answerId, questionElement) {
+    const answer = document.getElementById(answerId);
+    const arrow = questionElement.querySelector('.arrow');
+    const video = answer.querySelector('video');
+
+    if (answer.style.display === "block") {
+        answer.style.display = "none";
+        arrow.classList.remove('rotated');
+        video.style.display = "none"; // Ẩn video khi câu trả lời bị ẩn
+    } else {
+        answer.style.display = "block";
+        arrow.classList.add('rotated');
+        video.style.display = "block"; // Hiện video khi câu trả lời được hiển thị
+    }
+}
