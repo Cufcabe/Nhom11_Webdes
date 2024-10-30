@@ -4,9 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chăm Sóc Đôi Chân Bạn &#8211; Hơn 130 năm cùng những đôi tất Tuyệt vời</title>
-    <link rel="shortcut icon" href="./resources/layout/img/fukuske_icon.webp" sizes="192x192"/>
-    <link rel="stylesheet" href="./css/css for layout/layout.css">
+    <link rel="shortcut icon" href="./resources/layout/fukuske_icon.webp" sizes="192x192"/>
+    <link rel="stylesheet" href="./css/layout.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
+
+<!--Search bar-->
+
+<div id="searchbox-background" onclick="closeSearchbox()"></div>
+<div id="search-box" class="search-box">
+    <a class="close-search" onclick="closeSearchbox()">
+        <i class="fa fa-close"></i>
+    </a>
+    <form class="search-box-input">
+        <h3>Tìm kiếm</h3>
+        <div class="searchbox-input-area">
+            <input class="search-box-text-input" type="search" placeholder="Nhập tên sản phẩm" value="" autocomplete="off">
+            <button class="searchbox-button" type="submit">
+                <i class="fa fa-search"></i>
+            </button>
+        </div>
+    </form>
+</div>
+
+<!--Contact form-->
+<div id="contact-form-container">
+    <div>
+        <form id="contact-form" class="contact-form" method="post">
+            <a onclick="closeContactForm()"><i class="fa fa-close"></i></a>
+            <h1>Contact</h1>
+
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name" required><br>
+        
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" required><br>
+
+            <label for="feedback">Your message (optional):</label>
+            <textarea id="feedback" name="feedback" rows="4" cols="50"></textarea><br>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</div>
+
 
 <!--Site header-->
 <header id="site-header" class="site-header">
@@ -16,7 +57,7 @@
         <div class="site-brand-container">
             <div class="site-logo">
                 <a href="./index.html" title="Chăm Sóc Đôi Chân Bạn" rel="home">
-                    <img class="header-image" alt="Chăm Sóc Đôi Chân Bạn" src="./resources/layout/img/header_logo.svg" title="Chăm Sóc Đôi Chân Bạn">
+                    <img class="header-image" alt="Chăm Sóc Đôi Chân Bạn" src="./resources/layout/header_logo.svg" title="Chăm Sóc Đôi Chân Bạn">
                 </a>
             </div>
 
@@ -30,22 +71,37 @@
     </div>
 </header>
 
-<!--Navigation bar-->
-    <!--Mobile navbar-->
 
-<nav id="mobile-navbar" class="mobile navbar">
+
+<!--Mobile navbar-->
+<nav id="mobile-navbar" class="mobile-navbar">
     <div class="mobile-navbar-container">
-        <div class="mobile-navbar-branding">
-            <p class="main-title">
-                <a href="./index.html" style="background-color:#88BD88; color:black">Chăm Sóc Đôi Chân Bạn</a>
-            </p>
+        <div class="mobile-navigation">
+            <a class="mobile-site-branding" href="./index.html" title="Chăm Sóc Đôi Chân Bạn" rel="home">
+                <img class="mobile-brand-image" alt="Chăm Sóc Đôi Chân Bạn" src="./resources/layout/header_logo.svg" title="Chăm Sóc Đôi Chân Bạn">
+            </a>
+    
+            <div class="mobile-icons-container">
+                <a class="search-icon" title="Search" href="#" onclick="openSearchbox()">
+                    <i class="fa fa-search"></i>
+                </a>
+                <a class="profile-icon" title="Profile" href="#">
+                    <i class="fa fa-user"></i>
+                </a>
+                <a class="cart-icon" title="Cart" href="#">
+                    <i class="fa fa-shopping-cart"></i>
+                </a>
+            </div>
+    
+            <div id="mobile-menu-toggle" class="mobile-menu-toggle">
+                <i class="fa fa-bars"></i>
+            </div>
         </div>
-
-        <div id="mobile-menu-toggle" class="mobile-menu-toggle">&#9776;</div>
+        
 
         <div id="mobile-menu" class="mobile-menu">
             <ul class="mobile-menu">
-                <li><a href="/index.html">HOME</a></li>
+                <li><a href="./index.html">HOME</a></li>
                 <li>
                     <a href="#" id="mobile-menu-can-dropdown" class="mobile-menu-can-dropdown">SẢN PHẨM</a>
                     <ul class="mobile-dropdown-menu" id="mobile-dropdown-menu">
@@ -65,14 +121,13 @@
                         <li><a href="#">2</a></li>
                     </ul>
                 </li>
-                <li><a href="#">LIÊN HỆ</a></li>
+                <li><a href="#" onclick="openContactForm()">LIÊN HỆ</a></li>
             </ul>
         </div>
     </div>
 </nav>
 
-
-    <!--Standard navbar-->
+<!--Standard navbar-->
 <nav id="standard-navbar">
     <div class="navbar-container">
         <ul class="navbar">
@@ -96,11 +151,22 @@
                     <li><a href="#">2</a></li>
                 </ul>
             </li>
-            <li><a href="#">LIÊN HỆ</a></li>
+            <li><a href="#" onclick="openContactForm()">LIÊN HỆ</a></li>
         </ul>
+
+        <div class="icons-container">
+            <a class="search-icon" title="Search" href="#" onclick="openSearchbox()">
+                <i class="fa fa-search"></i>
+            </a>
+            <a class="profile-icon" title="Profile" href="#">
+                <i class="fa fa-user"></i>
+            </a>
+            <a class="cart-icon" title="Cart" href="#">
+                <i class="fa fa-shopping-cart"></i>
+            </a>
+        </div>
     </div>
 </nav>
-
 
 <!--Content--->
 
@@ -119,7 +185,7 @@
             <br>
             <p class="nhaphanphoi_link">
                 <span>
-                    <img src="./resources/layout/img/address_pointer.webp" style="margin-right: 5px;">ĐIỂM BÁN
+                    <img src="./resources/layout/address_pointer.webp" style="margin-right: 5px;">ĐIỂM BÁN
                 </span>
             </p>
         </div>
@@ -133,7 +199,7 @@
             <br>
             <p class="nhaphanphoi_link">
                 <span>
-                    <img src="./resources/layout/img/address_pointer.webp" style="margin-right: 5px;">ĐIỂM BÁN
+                    <img src="./resources/layout/address_pointer.webp" style="margin-right: 5px;">ĐIỂM BÁN
                 </span>
             </p>
         </div>
@@ -147,7 +213,7 @@
             <br>
             <p class="nhaphanphoi_link">
                 <span>
-                    <img src="./resources/layout/img/address_pointer.webp" style="margin-right: 5px;">ĐIỂM BÁN
+                    <img src="./resources/layout/address_pointer.webp" style="margin-right: 5px;">ĐIỂM BÁN
                 </span>
             </p>
         </div>
@@ -155,19 +221,19 @@
 
     <div class="lienket">
         <a href="#" target="blank">
-            <img class="footer_link" src="./resources/layout/img/facebookfooterw.webp">
+            <img class="footer_link" src="./resources/layout/facebookfooterw.webp">
         </a>
         <a href="#" target="blank">
-            <img class="footer_link" src="./resources/layout/img/youtubefooterw.webp">
+            <img class="footer_link" src="./resources/layout/youtubefooterw.webp">
         </a>
         <a href="#" target="blank">
-            <img class="footer_link" src="./resources/layout/img/konnifooterw.webp">
+            <img class="footer_link" src="./resources/layout/konnifooterw.webp">
         </a>
         <a href="#" target="blank">
-            <img class="footer_link" src="./resources/layout/img/shoppeefooterw.webp">
+            <img class="footer_link" src="./resources/layout/shoppeefooterw.webp">
         </a>
         <a href="#" target="blank">
-            <img class="footer_link" src="./resources/layout/img/tikifooterw.webp">
+            <img class="footer_link" src="./resources/layout/tikifooterw.webp">
         </a>
     </div>
 
@@ -178,6 +244,6 @@
     <p class="footer_info">Nhóm 11</p>
 </div>
 
-<script src="./js/js for layout/layout.js"></script>
+<script src="./js/layout.js"></script>
 
 </html>
