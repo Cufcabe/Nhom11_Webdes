@@ -72,6 +72,7 @@
     background-color: whitesmoke;
     position: relative;
     border: 5px solid #757575;
+    overflow: scroll;
 }
 .contact-form a {
     position: absolute;
