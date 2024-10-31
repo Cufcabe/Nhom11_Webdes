@@ -1763,4 +1763,6 @@ input, button {
 
 .btn {
     background-color: #AB2500 !important;
+    color: whitesmoke;
+    border: 0 !important;
 }
