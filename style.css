@@ -1762,5 +1762,5 @@ input, button {
 }
 
 .btn {
-    background-color: #AB2500;
+    background-color: #AB2500 !important;
 }
