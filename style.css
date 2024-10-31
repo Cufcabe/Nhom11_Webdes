@@ -89,7 +89,7 @@
     color: #333;
 }
 .feature-item a:hover {
-    color: #007BFF; /* Màu thay đổi khi hover */
+    color: #810000; /* Màu thay đổi khi hover */
 }
 
 /*Search bar*/
@@ -97,7 +97,8 @@
     display: none;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: black;
+    opacity: 0.8;
     position: fixed;
     z-index: 998;
 }
@@ -105,7 +106,7 @@
     display: none;
     width: 100%;
     top: 0;
-    position: sticky;
+    position: absolute;
     z-index: 999;
     background-color: whitesmoke;
 }
@@ -114,7 +115,6 @@
     top: 20px;
     right: 20px;
     font-size: 20px;
-    color: black !important;
 }
 .search-box-input {
     padding: 40px 50px;
@@ -122,11 +122,6 @@
 .search-box-input h3 {
     margin: 0 0 10px 5px ;
     font-weight:600 ;
-}
-.searchbox-input-area {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
 }
 .search-box-text-input {
     width: 95%;
@@ -137,11 +132,10 @@
     background-color: whitesmoke;
 }
 .searchbox-button{
-    width: 5% !important;
-    font-size: 15px;
+    font-size: 20px;
     border: none;
     padding: 0 5px;
-    background-color: transparent !important;
+    background-color: transparent;
     color:grey;
     cursor: pointer;
 }
@@ -167,7 +161,7 @@
     position: relative;
     background-color: #fff;
     border-radius: 10px; /* Adjust the radius as needed */
-    overflow: auto; /* Ensures content inside respects the border radius */
+    overflow: hidden; /* Ensures content inside respects the border radius */
 }
 .contact-form {
     width: 100%;
@@ -176,7 +170,7 @@
     background-color: whitesmoke;
     position: relative;
     border-radius: 10px;
-    overflow: auto;
+    overflow-x: hidden;
 }
 .contact-form a {
     position: absolute;
@@ -198,14 +192,13 @@
     outline: none;
 }
 .contact-form button {
-    background-color: #00e000;
+    background-color: #860000;
     padding: 16px 20px;
     border: none;
     cursor: pointer;
     width: 100px;
     margin-bottom:10px;
 }
-
 
 /*Site header*/
 body {
@@ -290,10 +283,6 @@ img {
     #mobile-navbar {
         display: block !important;
         width: 100% !important;
-        margin-bottom: 30px;
-        position: sticky;
-        top: 0;
-        z-index: 9;
     }
     #standard-navbar, #site-header {
         display: none;
@@ -318,18 +307,6 @@ img {
         color:darkred;
         background-color: #bababa;
     }
-    .mobile-navbar-container {
-        display: flex;
-        flex-direction: row;
-        align-items: stretch;
-        justify-content: baseline;
-    }
-    .mobile-navbar-branding, .mobile-navbar-branding:hover {
-        padding: 5px 10px !important;
-        justify-content: left;
-        background-color: transparent !important;
-        margin-right: auto;
-    }
     div.mobile-menu {
         background-color: whitesmoke;
     }
@@ -348,18 +325,23 @@ img {
         background-color: transparent;
         cursor: pointer;
         border: 0;
-        padding: 20px 15px;
+        padding: 20px;
         font-size: 20px;
         font-weight: 500;
+        position: absolute;
+        top: 0px;
+        right: 0px;
     }
     .mobile-icons-container {
         display: flex;
-        flex-direction: row;
-        padding: 25px 10px;
+        position: fixed;
+        top: 5px;
+        right: 50px;
+        padding:25px;
     }
     .mobile-icons-container a {
         padding: 0 15px;
-        margin: 0;
+        margin: 0 5px;
     }
     .mobile-icons-container a:hover {
         color: black !important;
@@ -425,12 +407,12 @@ nav {
 }
 .icons-container {
     display: flex;
-    justify-content: flex-start;
-    width: 20%;
+    justify-content: flex-end;
+    width: 25%;
     max-width: 120px;
 }
 .icons-container i {
-    padding: 0 10px;
+    padding: 0 15px;
     color: black;
 }
 
@@ -447,9 +429,6 @@ nav {
     align-items: center ;
     margin-top: 5px;
     position: relative;
-}
-.footer p {
-    color: whitesmoke !important;
 }
 .ft_lienket {
     padding: 0;
@@ -482,7 +461,7 @@ nav {
     margin: 0;
 }
 .mientrung {
-    border-left: 2px solid grey;
+    border-left: 2px solid rgb(255, 255, 255);
     border-right: 2px solid grey;
 }
 .nhaphanphoi_title {
@@ -530,16 +509,8 @@ nav {
     padding-left: 5px;
     padding-right: 5px;
 }
-@keyframes rotate {
-    0% {
-      transform: rotate(0);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
-}
 .lienket img:hover {
-    animation: 0.6s ease-in 0s rotate ;
+    animation: spin 0.6s ease-in;
 }
 .ban_quyen_page {
     display: flex;
@@ -615,7 +586,7 @@ nav {
 .article-title {
     font-size: 1.5rem;
     margin: 10px 0;
-    color: #4CAF50;
+    color: #710000;
 }
 .article-description {
     font-size: 1rem;
@@ -636,7 +607,7 @@ nav {
     border: none;
     font-size: 18px;
     padding: 10px;
-    color: #28a745;
+    color: #870000;
     cursor: pointer;
     outline: none;
     transition: color 0.3s;
@@ -645,7 +616,7 @@ nav {
 }
 
 .years button:hover {
-    background-color: #1d7c34;
+    background-color: #7e0000;
     text-decoration: underline;
     
     color:white !important;
@@ -653,7 +624,7 @@ nav {
 
 .years button.active {
     font-weight: bold;
-    color: #1d7c34;
+    color: #560000;
 }
 
 .content {
@@ -714,7 +685,7 @@ p {
 
 h1 {
     text-align: center;
-    color: #007bff;
+    color: #9b2700;
     margin-bottom: 20px;
 }
 
@@ -744,7 +715,7 @@ h2 {
     display: none;
     padding: 15px;
     background-color: #f1f1f1;
-    border-left: 5px solid #007bff;
+    border-left: 5px solid #b12f00;
     border-radius: 0 0 5px 5px;
     margin-bottom: 10px;
 }
@@ -753,7 +724,7 @@ h2 {
     margin-left: auto;
     transition: transform 0.3s;
     font-size: 20px;
-    color: #007bff;
+    color: #922000;
 }
 
 .arrow.rotated {
@@ -975,7 +946,7 @@ body {
 
 #navbar li a:hover,
 #navbar li a.active {
-    color: #088178;
+    color: #9e2200;
 }
 
 #navbar li a:hover::after,
@@ -983,7 +954,7 @@ body {
     content: "";
     width: 30%;
     height: 2px;
-    background: #088178;
+    background: #b83501;
     position: absolute;
     bottom: -4px;
     left: 20px;
@@ -1018,13 +989,13 @@ body {
 }
 
 #hero h1 {
-    color: #088178;
+    color: #a71c00;
 }
 
 #hero button {
     background-image: url(images/button.png);
     background-color: transparent;
-    color: #088178;
+    color: #a71c00;
     border: 0;
     padding: 14px 80px 14px 65px;
     background-repeat: no-repeat;
@@ -1064,7 +1035,7 @@ body {
     padding: 9px 8px 6px 8px;
     line-height: 1;
     border-radius: 4px;
-    color: #088178;
+    color: #a71c00;
     background-color: #fddde4;
 }
 
@@ -1146,7 +1117,7 @@ body {
     padding-top: 7px;
     font-size: 15px;
     font-weight: 700;
-    color: #088178;
+    color: #9b2700;
 }
 
 #product1 .pro .cart {
@@ -1156,7 +1127,7 @@ body {
     border-radius: 50px;
     background-color: #e8f6ea;
     font-weight: 500;
-    color: #088178;
+    color: #9b2700;
     border: 1px solid #cce7d0;
     position: absolute;
     bottom: 20px;
@@ -1192,7 +1163,7 @@ body {
 }
 
 #banner button:hover {
-    background-color: #088178;
+    background-color: #ef3636;
     color: #fff;
 }
 
@@ -1236,8 +1207,8 @@ body {
 }
 
 #sm-banner .banner-box:hover button{
-    background-color: #088178;
-    border: 1px solid #088178;
+    background-color: #ef3636;
+    border: 1px solid #ef3636;
 }
 
 #sm-banner .banner-box:nth-child(2) {
@@ -1331,14 +1302,14 @@ footer .follow i{
 }
 
 footer .install .row img{
-    border: 1px solid #088178;
+    border: 1px solid #9b2700;
     border-radius: 6px;
     margin: 10px 0 15px 0;
 }
 
 footer .follow i:hover,
 footer a:hover {
-    color: #088178;
+    color: #9b2700;
 }
 
 footer .copyright {
@@ -1371,7 +1342,7 @@ footer .copyright {
 
 #pagination a {
     text-decoration: none;
-    background-color: #088178;
+    background-color: #9b2700;
     padding: 15px 20px;
     border-radius: 4px;
     color: #fff;
@@ -1475,7 +1446,7 @@ footer .copyright {
 
 #cart-add .coupon button,
 #cart-add .subtotal button {
-    background-color: #088178;
+    background-color: #9b2700;
     color: #fff;
     padding: 12px 20px;
 }
@@ -1662,4 +1633,92 @@ input, button {
     flex-direction: row;
     align-items: center;
     gap: 10px; /* Adjust spacing between items as needed */
+}
+
+
+/* Chatbox Styles */
+.chatbox-container {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    width: 300px;
+    max-height: 400px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    display: none;
+    flex-direction: column;
+    overflow: hidden;
+    z-index: 1000;
+}
+
+.chatbox-header {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    font-size: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;  /* Khoảng cách giữa các phần tử */
+    white-space: nowrap;  /* Ngăn chữ xuống dòng */
+}
+
+
+.chatbox-body {
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+}
+
+.chatbox-messages {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+    background-color: #f1f1f1;
+}
+
+.chatbox-input {
+    width: calc(100% - 60px);
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin: 8px;
+}
+
+.chatbox-send-btn {
+    padding: 8px;
+    background-color: #a72700;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    margin: 8px;
+}
+
+/* Nút mở chatbox hình tròn */
+.open-chatbox-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #ab2500;
+    color: white;
+    border: none;
+    width: 50px;  /* Đặt chiều rộng */
+    height: 50px; /* Đặt chiều cao bằng chiều rộng */
+    border-radius: 50%;  /* Làm tròn các góc để thành hình tròn */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    z-index: 1000;
+}
+
+
+.chatbox-close-btn {
+    background: none;
+    color: white;
+    border: none;
+    cursor: pointer;
 }

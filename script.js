@@ -85,3 +85,42 @@ function toggleAnswer(answerId, questionElement) {
         video.style.display = "block"; // Hiện video khi câu trả lời được hiển thị
     }
 }
+
+// Toggle chatbox visibility
+function toggleChatbox() {
+    const chatbox = document.getElementById("chatbox-container");
+    const openChatButton = document.getElementById("open-chatbox-btn");
+    if (chatbox.style.display === "none" || chatbox.style.display === "") {
+        chatbox.style.display = "flex";
+        openChatButton.style.display = "none";
+    } else {
+        chatbox.style.display = "none";
+        openChatButton.style.display = "block";
+    }
+}
+
+// Send message in chatbox
+function sendMessage() {
+    const input = document.getElementById("chatbox-input");
+    const messages = document.getElementById("chatbox-messages");
+
+    if (input.value.trim() !== "") {
+        const userMessage = document.createElement("div");
+        userMessage.className = "chatbox-message user-message";
+        userMessage.textContent = input.value;
+        messages.appendChild(userMessage);
+
+        // Simulate bot response
+        setTimeout(() => {
+            const botMessage = document.createElement("div");
+            botMessage.className = "chatbox-message bot-message";
+            botMessage.textContent = "Cảm ơn bạn đã liên hệ! Chúng tôi sẽ trả lời sớm nhất.";
+            messages.appendChild(botMessage);
+            messages.scrollTop = messages.scrollHeight;
+        }, 1000);
+
+        // Clear the input
+        input.value = "";
+        messages.scrollTop = messages.scrollHeight;
+    }
+}

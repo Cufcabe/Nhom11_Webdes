@@ -61,7 +61,7 @@
 
         <div class="site-brand-container">
             <div class="site-logo">
-                <a href="index.html" title="Chăm Sóc Đôi Chân Bạn" rel="home">
+                <a href="Home.html" title="Chăm Sóc Đôi Chân Bạn" rel="home">
                     <img class="header-image" alt="Chăm Sóc Đôi Chân Bạn" src="Resources/header_logo.svg"
                         title="Chăm Sóc Đôi Chân Bạn">
                 </a>
@@ -69,7 +69,7 @@
 
             <div class="site-branding">
                 <p class="main-title">
-                    <a href="index.html" rel="home">Chăm Sóc Đôi Chân Bạn</a>
+                    <a href="Home.html" rel="home">Chăm Sóc Đôi Chân Bạn</a>
                 </p>
                 <p class="site-description">Hơn 130 năm cùng những đôi tất Tuyệt vời</p>
             </div>
@@ -84,41 +84,43 @@
     <div class="mobile-navbar-container">
         <div class="mobile-navbar-branding">
             <p class="main-title">
-                <a href="index.html" style="background-color: whitesmoke; color:black">Chăm Sóc Đôi Chân Bạn</a>
+                <a href="Home.html" style="background-color: whitesmoke; color:black">Chăm Sóc Đôi Chân Bạn</a>
             </p>
+
+            <div class="mobile-icons-container">
+                <a class="search-icon" title="Search" href="#" onclick="openSearchbox()">
+                    <i class="fa fa-search"></i>
+                </a>
+                <a class="profile-icon" title="Profile" href="#">
+                    <i class="fa fa-user"></i>
+                </a>
+                <a class="cart-icon" title="Cart" href="#">
+                    <i class="fa fa-shopping-cart"></i>
+                </a>
+            </div>
         </div>
 
-        <div class="mobile-icons-container">
-            <a class="search-icon" title="Search" href="#" onclick="openSearchbox()">
-                <i class="fa fa-search"></i>
-            </a>
-            <a class="profile-icon" title="Profile" href="#">
-                <i class="fa fa-user"></i>
-            </a>
-            <a class="cart-icon" title="Cart" href="#">
-                <i class="fa fa-shopping-cart"></i>
-            </a>
-        </div>
+        <div id="mobile-menu-toggle" class="mobile-menu-toggle">&#9776;</div>
 
-        <div id="mobile-menu-toggle" class="mobile-menu-toggle">&#9776;</div>   
-    </div>
-    <div id="mobile-menu" class="mobile-menu">
-        <ul class="mobile-menu">
-            <li><a class="hightlight" href="#">HOME</a></li>
-            <li><a href="MuaHang.html" id="mobile-menu-can-dropdown" class="mobile-menu-can-dropdown">SẢN PHẨM</a></li>
-            <li><a href="BaiViet.html">BÀI VIẾT</a></li>
-            <li><a href="GioiTHieu.html">GIỚI THIỆU</a></li>
-            <li><a href="HoiDap.html">HỎI & ĐÁP</a></li>
-            <li><a href="Clips.html">CLIPS</a></li>
-            <li>
-                <a href="#" id="mobile-menu-can-dropdown-2" class="mobile-menu-can-dropdown">MUA HÀNG</a>
-                <ul class="mobile-dropdown-menu" id="mobile-dropdown-menu-2">
-                    <li><a href="https://shopee.vn/fukuske_official">Shopee</a></li>
-                    <li><a href="https://tiki.vn/cua-hang/genki-fami-tpcn-nhat-ban">Tiki</a></li>
-                </ul>
-            </li>
-            <li><a href="#" onclick="openContactForm()">LIÊN HỆ</a></li>
-        </ul>
+        <div id="mobile-menu" class="mobile-menu">
+            <ul class="mobile-menu">
+                <li><a href="Home.html">HOME</a></li>
+                <li><a href="MuaHang.html" id="mobile-menu-can-dropdown" class="mobile-menu-can-dropdown">SẢN PHẨM</a>
+                </li>
+                <li><a href="BaiViet.html">BÀI VIẾT</a></li>
+                <li><a href="GioiTHieu.html">GIỚI THIỆU</a></li>
+                <li><a href="HoiDap.html">HỎI & ĐÁP</a></li>
+                <li><a class="hightlight" href="#">CLIPS</a></li>
+                <li>
+                    <a href="#" id="mobile-menu-can-dropdown-2" class="mobile-menu-can-dropdown">MUA HÀNG</a>
+                    <ul class="mobile-dropdown-menu" id="mobile-dropdown-menu-2">
+                        <li><a href="https://shopee.vn/fukuske_official">Shopee</a></li>
+                        <li><a href="https://tiki.vn/cua-hang/genki-fami-tpcn-nhat-ban">Tiki</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" onclick="openContactForm()">LIÊN HỆ</a></li>
+            </ul>
+        </div>
     </div>
 </nav>
 
@@ -126,7 +128,7 @@
 <nav id="standard-navbar">
     <div class="navbar-container">
         <ul class="navbar">
-            <li><a href="index.html">HOME</a></li>
+            <li><a href="Home.html">HOME</a></li>
             <li><a href="MuaHang.html" id="mobile-menu-can-dropdown" class="mobile-menu-can-dropdown">SẢN PHẨM</a></li>
             <li><a href="BaiViet.html">BÀI VIẾT</a></li>
             <li><a href="GioiTHieu.html">GIỚI THIỆU</a></li>
@@ -320,17 +322,20 @@
     </div>
 
     <div class="lienket">
-        <a href="https://www.facebook.com/fukuske.vn/" target="blank">
+        <a href="#" target="blank">
             <img class="footer_link" src="Resources/facebookfooterw.webp">
         </a>
-        <a href="https://youtube.com/@voykhoafukuske3102?si=gL_3W47_Jj4ONAmR" target="blank">
+        <a href="#" target="blank">
             <img class="footer_link" src="Resources/youtubefooterw.webp">
         </a>
-        <a href="https://konni39.vn" target="blank">
+        <a href="#" target="blank">
             <img class="footer_link" src="Resources/konnifooterw.webp">
         </a>
-        <a href="https://vn.shp.ee/4oejGMm" target="blank">
+        <a href="#" target="blank">
             <img class="footer_link" src="Resources/shoppeefooterw.webp">
+        </a>
+        <a href="#" target="blank">
+            <img class="footer_link" src="Resources/tikifooterw.webp">
         </a>
     </div>
 
@@ -343,4 +348,21 @@
 
 <script src="script.js"></script>
 
+<!-- Chatbox -->
+<div id="chatbox-container" class="chatbox-container">
+    <div id="chatbox-header" class="chatbox-header">
+        <span>Chat với chúng tôi!</span>
+        <button onclick="toggleChatbox()" class="chatbox-close-btn">x</button>
+    </div>
+    <div id="chatbox-body" class="chatbox-body">
+        <div id="chatbox-messages" class="chatbox-messages">
+            <!-- Tin nhắn sẽ hiển thị ở đây -->
+        </div>
+        <input type="text" id="chatbox-input" class="chatbox-input" placeholder="Nhập tin nhắn..." />
+        <button onclick="sendMessage()" class="chatbox-send-btn">Gửi</button>
+    </div>
+</div>
+
+<!-- Nút mở chatbox -->
+<button id="open-chatbox-btn" onclick="toggleChatbox()" class="open-chatbox-btn">Chat</button>
 </html>
