@@ -38,10 +38,10 @@
             <a onclick="closeContactForm()"><i class="fa fa-close"></i></a>
             <h1>Contact</h1>
 
-            <label for="name">Name:</label><br>
+            <label for="name">Name:</label>
             <input type="text" id="name" name="name" required>
 
-            <label for="email">Email:</label><br>
+            <label for="email">Email:</label>
             <input type="email" id="email" name="email" required>
 
             <label for="feedback">Your message (optional):</label>
@@ -56,6 +56,7 @@
 <!--Site header-->
 <header id="site-header" class="site-header">
     <div class="inside-header">
+        <div class="header-widget"></div>
 
         <div class="site-brand-container">
             <div class="site-logo">
@@ -74,7 +75,6 @@
         </div>
     </div>
 </header>
-
 
 
 <!--Mobile navbar-->
@@ -102,10 +102,10 @@
     </div>
     <div id="mobile-menu" class="mobile-menu">
         <ul class="mobile-menu">
-            <li><a class="hightlight" href="#">HOME</a></li>
+            <li><a class="highlight" href="#">HOME</a></li>
             <li><a href="MuaHang.html" id="mobile-menu-can-dropdown" class="mobile-menu-can-dropdown">SẢN PHẨM</a></li>
             <li><a href="BaiViet.html">BÀI VIẾT</a></li>
-            <li><a href="GioiTHieu.html">GIỚI THIỆU</a></li>
+            <li><a href="GioiThieu.html">GIỚI THIỆU</a></li>
             <li><a href="HoiDap.html">HỎI & ĐÁP</a></li>
             <li><a href="Clips.html">CLIPS</a></li>
             <li>
@@ -115,8 +115,9 @@
                     <li><a href="https://tiki.vn/cua-hang/genki-fami-tpcn-nhat-ban">Tiki</a></li>
                 </ul>
             </li>
-            <li><a href="#" onclick="openContactForm()">LIÊN HỆ</a></li>
-        </ul>
+                <li><a href="#" onclick="openContactForm()">LIÊN HỆ</a></li>
+            </ul>
+        </div>
     </div>
 </nav>
 
@@ -124,15 +125,15 @@
 <nav id="standard-navbar">
     <div class="navbar-container">
         <ul class="navbar">
-            <li><a class="hightlight" href="#">HOME</a></li>
+            <li><a class="highlight" href="index.html">HOME</a></li>
             <li><a href="MuaHang.html" id="mobile-menu-can-dropdown" class="mobile-menu-can-dropdown">SẢN PHẨM</a></li>
             <li><a href="BaiViet.html">BÀI VIẾT</a></li>
-            <li><a href="GioiTHieu.html">GIỚI THIỆU</a></li>
+            <li><a href="GioiThieu.html">GIỚI THIỆU</a></li>
             <li><a href="HoiDap.html">HỎI & ĐÁP</a></li>
             <li><a href="Clips.html">CLIPS</a></li>
             <li>
-                <a href="#" class="dropdown-toggle">MUA HÀNG</a>
-                <ul class="dropdown-menu">
+                <a href="#" id="mobile-menu-can-dropdown-2" class="mobile-menu-can-dropdown">MUA HÀNG</a>
+                <ul class="dropdown-menu" id="dropdown-menu">
                     <li><a href="https://shopee.vn/fukuske_official">Shopee</a></li>
                     <li><a href="https://tiki.vn/cua-hang/genki-fami-tpcn-nhat-ban">Tiki</a></li>
                 </ul>
@@ -207,7 +208,7 @@
     <div class="features">
         <div class="feature-item">
             <img src="Resources/1.png" alt="Lịch sử Fukuske" style="width:100%">
-            <a href="../gioithieu/gioithieu.html">
+            <a href="../gioithieu/GioiThieu.html">
                 <h3>Lịch sử Fukuske</h3>
             </a>
         </div>
@@ -317,5 +318,24 @@
     }
 </script>
 <script src="script.js"></script>
+
+
+<!-- Chatbox -->
+<div id="chatbox-container" class="chatbox-container">
+    <div id="chatbox-header" class="chatbox-header">
+        <span>Chat với chúng tôi!</span>
+        <button onclick="toggleChatbox()" class="chatbox-close-btn">x</button>
+    </div>
+    <div id="chatbox-body" class="chatbox-body">
+        <div id="chatbox-messages" class="chatbox-messages">
+            <!-- Tin nhắn sẽ hiển thị ở đây -->
+        </div>
+        <input type="text" id="chatbox-input" class="chatbox-input" placeholder="Nhập tin nhắn..." />
+        <button onclick="sendMessage()" class="chatbox-send-btn">Gửi</button>
+    </div>
+</div>
+
+<!-- Nút mở chatbox -->
+<button id="open-chatbox-btn" onclick="toggleChatbox()" class="open-chatbox-btn">Chat</button>
 
 </html>
