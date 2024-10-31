@@ -425,8 +425,8 @@ nav {
 }
 .icons-container {
     display: flex;
-    justify-content: flex-end;
-    width: 25%;
+    justify-content: flex-start;
+    width: 20%;
     max-width: 120px;
 }
 .icons-container i {
