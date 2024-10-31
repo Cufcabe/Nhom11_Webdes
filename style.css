@@ -1760,3 +1760,7 @@ input, button {
     margin-right: 5px;
     margin-left: auto;
 }
+
+.btn {
+    background-color: #AB2500;
+}
